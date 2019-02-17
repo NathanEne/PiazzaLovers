@@ -42,7 +42,31 @@ public class Window extends Application {
 
         gc.strokeOval(0,0,200,200);
 
+        int[][] manta = new int[1000][2];
+
+        for (int y = 0; y < manta.length; y++){
+            for(int x = 0; x < manta[y].length; x++){
+                manta[y][x] = rng(0,1000);
+            }
+        }
+
+        for (int y = 0; y < manta.length-1; y++){
+            System.out.println(manta[y][0] + " " + manta[y][1]);
+            gc.strokeLine(manta[y][1], manta[y][0], manta[y+1][1], manta[y+1][0]);
+        }
+
+
         primaryStage.show();
+    }
+
+    public static int rng(int min, int max){ //Random Number Generator
+        if(min > max){ //Argument Error Trap
+            int temp = min;
+            min = max;
+            max = temp;
+        }
+        int number = (int)(Math.random()*(max - min + 1) + min);
+        return number;
     }
 
             /*
