@@ -13,8 +13,6 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 
-import java.awt.*;
-
 public class Window extends Application {
 
     public static void main(String[] args) throws Exception {
